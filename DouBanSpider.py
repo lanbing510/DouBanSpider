@@ -88,6 +88,5 @@ if __name__=='__main__':
     book_tag_lists = ['认知心理学','历史','经济','心理']
     
     book_lists=do_spider(book_tag_lists)
-    print_book_lists(book_lists,book_tag_lists)
     print_book_lists_excel(book_lists,book_tag_lists)
     
