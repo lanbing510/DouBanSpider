@@ -15,16 +15,28 @@ def book_spider(book_tag):
     book_list=[]
     try_times=0
     
+    #Some User Agents
+    hds=[{'User-Agent':'Mozilla/5.0 (Windows; U; Windows NT 6.1; en-US; rv:1.9.1.6) Gecko/20091201 Firefox/3.5.6'},\
+         {'User-Agent':'Mozilla/5.0 (Windows NT 6.2) AppleWebKit/535.11 (KHTML, like Gecko) Chrome/17.0.963.12 Safari/535.11'},\
+         {'User-Agent': 'Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.2; Trident/6.0)'}]
+         
     while(1):
         url="http://www.douban.com/tag/"+urllib.quote(book_tag)+"/book?start="+str(page_num*15)
-        
-        try:
-            source_code = requests.get(url)
-        except:
-            continue
         time.sleep(0.3)
         
-        plain_text = source_code.text
+        #Last Version, 伪装成浏览器
+        try:
+            req = urllib2.Request(url, headers=hds[page_num%len(hds)])
+            source_code = urllib2.urlopen(req).read()
+            plain_text=str(source_code)   
+        except urllib2.HTTPError, e:
+            print e
+            continue
+  
+        ##Previous Version, IP is easy to be Forbidden
+        #source_code = requests.get(url) 
+        #plain_text = source_code.text  
+        
         soup = BeautifulSoup(plain_text)
         list_soup = soup.find('div', {'class': 'mod book-list'})
         
