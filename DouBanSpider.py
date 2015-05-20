@@ -47,8 +47,8 @@ def book_spider(book_tag):
         try_times+=1;
         if list_soup==None and try_times<200:
             continue
-        elif list_soup==None:
-            break # Break when no informatoin got after 200 times requesting
+        elif list_soup==None or len(list_soup)<=1:
+            break # Break when no valid informatoin got after 200 times requesting
         
         for book_info in list_soup.findAll('dd'):
             title = book_info.find('a', {'class':'title'}).string.strip()
