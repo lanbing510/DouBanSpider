@@ -31,7 +31,7 @@ def book_spider(book_tag):
             req = urllib2.Request(url, headers=hds[page_num%len(hds)])
             source_code = urllib2.urlopen(req).read()
             plain_text=str(source_code)   
-        except urllib2.HTTPError, e:
+        except (urllib2.HTTPError, urllib2.URLError), e:
             print e
             continue
   
