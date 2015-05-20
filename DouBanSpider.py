@@ -26,7 +26,7 @@ def book_spider(book_tag):
         url="http://www.douban.com/tag/"+urllib.quote(book_tag)+"/book?start="+str(page_num*15)
         time.sleep(np.random.rand()*2)
         
-        #Last Version, 伪装成浏览器
+        #Last Version
         try:
             req = urllib2.Request(url, headers=hds[page_num%len(hds)])
             source_code = urllib2.urlopen(req).read()
