@@ -17,7 +17,11 @@ def book_spider(book_tag):
     
     while(1):
         url="http://www.douban.com/tag/"+urllib.quote(book_tag)+"/book?start="+str(page_num*15)
-        source_code = requests.get(url)
+        
+        try:
+            source_code = requests.get(url)
+        except:
+            continue
         time.sleep(0.3)
         
         plain_text = source_code.text
