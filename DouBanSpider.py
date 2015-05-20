@@ -78,14 +78,14 @@ def print_book_lists_excel(book_lists,book_tag_lists):
         ws[i].append(['序号','书名','评分','评价人数','作者','出版社'])
         count=1
         for bl in book_lists[i]:
-            ws[i].append([count,bl[0],bl[1],bl[2],bl[3],bl[4]])
+            ws[i].append([count,bl[0],float(bl[1]),int(bl[2]),bl[3],bl[4]])
             count+=1
     wb.save('book_list.xlsx')
 
 
 
 if __name__=='__main__':
-    book_tag_lists = ['认知心理学','历史','经济','心理']
+    book_tag_lists = ['心理','判断与决策','算法','数据结构','历史','经济']
     
     book_lists=do_spider(book_tag_lists)
     print_book_lists_excel(book_lists,book_tag_lists)
