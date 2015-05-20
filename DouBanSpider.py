@@ -2,6 +2,7 @@ import sys
 import time
 import urllib
 import requests
+import numpy as np
 from bs4 import BeautifulSoup
 from openpyxl import Workbook
 
@@ -22,7 +23,7 @@ def book_spider(book_tag):
          
     while(1):
         url="http://www.douban.com/tag/"+urllib.quote(book_tag)+"/book?start="+str(page_num*15)
-        time.sleep(0.3)
+        time.sleep(np.random.rand()*2)
         
         #Last Version, 伪装成浏览器
         try:
