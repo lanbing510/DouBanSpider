@@ -48,7 +48,7 @@ def book_spider(book_tag):
         if list_soup==None and try_times<200:
             continue
         elif list_soup==None or len(list_soup)<=1:
-            break # Break when no valid informatoin got after 200 times requesting
+            break # Break when no informatoin got after 200 times requesting
         
         for book_info in list_soup.findAll('dd'):
             title = book_info.find('a', {'class':'title'}).string.strip()
@@ -105,7 +105,7 @@ def print_book_lists_excel(book_lists,book_tag_lists):
 
 
 if __name__=='__main__':
-    book_tag_lists = ['心理','判断与决策','算法','数据结构','历史','经济']
+    book_tag_lists = ['心理','判断与决策','算法','数据结构','经济','历史']
     
     book_lists=do_spider(book_tag_lists)
     print_book_lists_excel(book_lists,book_tag_lists)
