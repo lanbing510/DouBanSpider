@@ -106,7 +106,8 @@ def print_book_lists_excel(book_lists,book_tag_lists):
 
 if __name__=='__main__':
     #book_tag_lists = ['心理','判断与决策','算法','数据结构','经济','历史']
-    book_tag_lists = ['传记','哲学','编程','创业','理财','社会学','佛教']
+    #book_tag_lists = ['传记','哲学','编程','创业','理财','社会学','佛教']
+    book_tag_lists=['思想','科技','科学','web','股票','爱情','两性']
     book_lists=do_spider(book_tag_lists)
     print_book_lists_excel(book_lists,book_tag_lists)
     
