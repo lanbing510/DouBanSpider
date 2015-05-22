@@ -100,14 +100,19 @@ def print_book_lists_excel(book_lists,book_tag_lists):
         for bl in book_lists[i]:
             ws[i].append([count,bl[0],float(bl[1]),int(bl[2]),bl[3],bl[4]])
             count+=1
-    wb.save('book_list.xlsx')
+    save_path='book_list'
+    for i in range(len(book_tag_lists)):
+        save_path+=('-'+book_tag_lists[i].decode())
+    save_path+='.xlsx'
+    wb.save(save_path)
 
 
 
 if __name__=='__main__':
     #book_tag_lists = ['心理','判断与决策','算法','数据结构','经济','历史']
     #book_tag_lists = ['传记','哲学','编程','创业','理财','社会学','佛教']
-    book_tag_lists=['思想','科技','科学','web','股票','爱情','两性']
+    #book_tag_lists=['思想','科技','科学','web','股票','爱情','两性']
+    book_tag_lists=['计算机','机器学习','linux','android','数据库','互联网']
     book_lists=do_spider(book_tag_lists)
     print_book_lists_excel(book_lists,book_tag_lists)
     
