@@ -27,7 +27,7 @@ def book_spider(book_tag):
     
     while(1):
         #url='http://www.douban.com/tag/%E5%B0%8F%E8%AF%B4/book?start=0' # For Test
-        url='http://www.douban.com/tag/"+urllib.quote(book_tag)+"/book?start='+str(page_num*15)
+        url='http://www.douban.com/tag/'+urllib.quote(book_tag)+'/book?start='+str(page_num*15)
         time.sleep(np.random.rand()*2)
         
         #Last Version
