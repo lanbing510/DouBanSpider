@@ -28,7 +28,7 @@ def book_spider(book_tag):
     while(1):
         #url='http://www.douban.com/tag/%E5%B0%8F%E8%AF%B4/book?start=0' # For Test
         url='http://www.douban.com/tag/'+urllib.quote(book_tag)+'/book?start='+str(page_num*15)
-        time.sleep(np.random.rand()*2)
+        time.sleep(np.random.rand()*5)
         
         #Last Version
         try:
@@ -125,12 +125,16 @@ def print_book_lists_excel(book_lists,book_tag_lists):
 
 
 
+
 if __name__=='__main__':
     #book_tag_lists = ['心理','判断与决策','算法','数据结构','经济','历史']
     #book_tag_lists = ['传记','哲学','编程','创业','理财','社会学','佛教']
-    #book_tag_lists=['思想','科技','科学','web','股票','爱情','两性']
-    #book_tag_lists=['计算机','机器学习','linux','android','数据库','互联网']
-    book_tag_lists=['数学']
+    #book_tag_lists = ['思想','科技','科学','web','股票','爱情','两性']
+    #book_tag_lists = ['计算机','机器学习','linux','android','数据库','互联网']
+    #book_tag_lists = ['数学']
+    #book_tag_lists = ['摄影','设计','音乐','旅行','教育','成长','情感','育儿','健康','养生']
+    #book_tag_lists = ['商业','理财','管理']  
+    book_tag_lists = ['名著'
     book_lists=do_spider(book_tag_lists)
     print_book_lists_excel(book_lists,book_tag_lists)
     
