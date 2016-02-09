@@ -4,7 +4,15 @@ Python所写，豆瓣读书的爬虫，方便大家搜罗各种美美书！
 
 ###更新
 
-最近爬下了豆瓣所有的图书信息（3088633本），[机缘成熟](https://www.zhihu.com/question/27621722/answer/48127556?from=profile_answer_card)的时候会在Github上传数据库和代码~<(*￣▽￣*)/
+最近爬下了豆瓣所有的图书信息（3088633本，2138386KB），并做了一个界面方面与数据库交互来搜罗好书。[机缘成熟](https://www.zhihu.com/question/27621722/answer/48127556?from=profile_answer_card)的时候会在Github上传数据库和代码~<(*￣▽￣*)/
+
+交互界面截图示例：
+
+![Aaron Swartz](https://github.com/lanbing510/DouBanSpider/raw/master/screenshots/sobook.jpg)
+
+查询结果截图示例：
+
+![Aaron Swartz](https://github.com/lanbing510/DouBanSpider/raw/master/screenshots/result.jpg)
 
 
 ###更新
