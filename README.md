@@ -2,6 +2,18 @@
 
 Python所写，豆瓣读书的爬虫，方便大家搜罗各种美美书！
 
+### 更新
+
+今年年初又爬了一遍豆瓣图书数据，爬下了3000000+条目，这次爬的时候特意爬取了每个图书页面中的“喜欢读XX的人也喜欢条目XX”，最近对数据进行了处理和可视化做了这个新的WebApp（随意取名书海星空），WebApp的截图如下。
+
+![Aaron Swartz](https://github.com/lanbing510/DouBanSpider/raw/master/screenshots/shxk.png)
+
+![Aaron Swartz](https://github.com/lanbing510/DouBanSpider/raw/master/screenshots/shxk1.png)
+
+书海星空WebApp中每本书作为一个节点包含评价人数、评分、被链接数（类似Google的RankPage算法根据网页被链接的数目来排网页的重要性，一般越好的书籍被链接的数目也越多）、链入的图书节点、链出的图书节点等信息。作为[好书一下](http://sobook.lanbing510.info)的补充（为了找经典好书读之前做了[好书一下](http://sobook.lanbing510.info)：自己可通过评价人数、评分等筛选寻找好书），书海星空可以根据看过的或找到的好书顺藤摸瓜来找相关的更多经典好书，书海中尽情泛舟，找到自己喜欢的宝藏。我平时可以里面泡上一整天。
+
+[书海星空](https://zhuanlan.zhihu.com/p/123271223)
+
 
 ### 更新
 
